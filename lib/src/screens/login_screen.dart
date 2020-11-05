@@ -4,6 +4,7 @@ import 'package:login_bloc_library/src/blocs/login_bloc.dart';
 import 'package:login_bloc_library/src/blocs/login_event.dart';
 import 'package:login_bloc_library/src/blocs/login_state.dart';
 import 'package:login_bloc_library/src/models/email.dart';
+import 'package:login_bloc_library/src/models/password.dart';
 
 class LoginScreen extends StatelessWidget {
 
@@ -15,21 +16,11 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             children: [
               _EmailField(),
-              passwordField(),
+              _PasswordField(),
               Container(margin: EdgeInsets.only(top: 20.0)),
               loginButton()
             ],
           ),
-        )
-    );
-  }
-
-  Widget passwordField() {
-    return TextField(
-        keyboardType: TextInputType.emailAddress,
-        decoration: InputDecoration(
-          hintText: 'your password',
-          labelText: 'Password',
         )
     );
   }
@@ -71,6 +62,41 @@ class _EmailField extends StatelessWidget {
         return 'Email Is Not Valid';
       } else {
         return 'Email Invalid';
+      }
+    } else {
+      return null;
+    }
+  }
+
+}
+
+class _PasswordField extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<LoginBloc, LoginState>(
+        buildWhen: (previous, current) => previous.password != current.password,
+        builder: (context, state) {
+          return TextField(
+              key: const Key('login_password'),
+              onChanged: (password) => context.bloc<LoginBloc>().add(PasswordChanged(password)),
+              keyboardType: TextInputType.emailAddress,
+              decoration: InputDecoration(
+                  hintText: 'your password',
+                  labelText: 'Password',
+                  errorText: errorTextPassword(state)
+              )
+          );
+        });
+  }
+
+  String errorTextPassword(LoginState state) {
+    if (state.password.invalid) {
+      if (state.password.error == PasswordStatus.empty) {
+        return 'Password Is Empty';
+      } else if (state.password.error == PasswordStatus.min_char) {
+        return 'Password Min 3 Character';
+      } else {
+        return 'Password Invalid';
       }
     } else {
       return null;
