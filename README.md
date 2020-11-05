@@ -1,16 +1,19 @@
-# login_bloc_library
+## Login Bloc Library 1.0.0 ##
 
-A new Flutter project.
+A simple login form application.  
+using [bloc library](https://bloclibrary.dev/#/)  
 
-## Getting Started
+#### Dependencies ####
+```
+Flutter 1.22.1 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision f30b7f4db9 (4 weeks ago) • 2020-10-08 10:06:30 -0700
+Engine • revision 75bef9f6c8
+Tools • Dart 2.10.1
+```
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### List Library ####
+- [Bloc](https://pub.dev/packages/bloc)
+- [Email Validator]()
+- [Eqatable]()
+- [Formz]()
+- [Flutter Bloc](https://pub.dev/packages/flutter_bloc)
