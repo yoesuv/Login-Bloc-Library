@@ -18,18 +18,10 @@ class LoginScreen extends StatelessWidget {
               _EmailField(),
               _PasswordField(),
               Container(margin: EdgeInsets.only(top: 20.0)),
-              loginButton()
+              _LoginButton()
             ],
           ),
         )
-    );
-  }
-
-  Widget loginButton() {
-    return RaisedButton(
-      onPressed: (){},
-      child: Text('Login'),
-      color: Colors.teal,
     );
   }
 
@@ -103,4 +95,28 @@ class _PasswordField extends StatelessWidget {
     }
   }
 
+}
+
+class _LoginButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<LoginBloc, LoginState>(
+      builder: (context, state) {
+        return Container(
+          height: 45,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: state.email.valid && state.password.valid ? Colors.teal : Colors.grey[400],
+            borderRadius: BorderRadius.circular(8)
+          ),
+          child: MaterialButton(
+            onPressed:  state.email.valid && state.password.valid ? (){
+              print("Login Screen # login bibeh");
+            } : null,
+            child: Text('Login', style: TextStyle(color: Colors.white, fontSize: 16)),
+          ),
+        );
+      },
+    );
+  }
 }
