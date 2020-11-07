@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_bloc_library/src/blocs/login_bloc.dart';
 import 'package:login_bloc_library/src/blocs/login_event.dart';
 import 'package:login_bloc_library/src/blocs/login_state.dart';
-import 'package:login_bloc_library/src/models/email.dart';
 import 'package:login_bloc_library/src/models/password.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -40,24 +39,10 @@ class _EmailField extends StatelessWidget {
             decoration: InputDecoration(
               hintText: 'email@you.com',
               labelText: 'Email Address',
-              errorText: errorTextEmail(state)
+              errorText: state.emailError
             )
           );
         });
-  }
-
-  String errorTextEmail(LoginState state) {
-    if (state.email.invalid) {
-      if (state.email.error == EmailStatus.empty) {
-        return 'Email Is Empty';
-      } else if (state.email.error == EmailStatus.not_valid) {
-        return 'Email Is Not Valid';
-      } else {
-        return 'Email Invalid';
-      }
-    } else {
-      return null;
-    }
   }
 
 }

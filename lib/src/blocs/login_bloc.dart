@@ -6,6 +6,7 @@ import 'package:login_bloc_library/src/models/email.dart';
 import 'package:login_bloc_library/src/models/password.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
+
   LoginBloc() : super(const LoginState());
 
   @override
@@ -19,7 +20,11 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   LoginState _emailChangedToState(EmailChanged event, LoginState state) {
     final email = Email.dirty(event.email);
-    return state.copyWith(status: Formz.validate([state.email, email]), email: email);
+    return state.copyWith(
+        status: Formz.validate([state.email, email]),
+        email: email,
+        emailError: email.error
+    );
   }
 
   LoginState _passwordChangedToState(PasswordChanged event, LoginState state) {
