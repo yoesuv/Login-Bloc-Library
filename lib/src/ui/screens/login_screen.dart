@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_bloc_library/src/core/bloc/login_bloc.dart';
 import 'package:login_bloc_library/src/core/event/login_event.dart';
 import 'package:login_bloc_library/src/core/state/login_state.dart';
+import 'package:login_bloc_library/src/ui/shared/email_field.dart';
 
 class LoginScreen extends StatelessWidget {
 
@@ -13,7 +14,7 @@ class LoginScreen extends StatelessWidget {
           margin: EdgeInsets.all(16.0),
           child: Column(
             children: [
-              _EmailField(),
+              _emailInput(),
               _PasswordField(),
               Container(margin: EdgeInsets.only(top: 20.0)),
               _LoginButton()
@@ -23,25 +24,15 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-}
-
-class _EmailField extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
+  Widget _emailInput() {
     return BlocBuilder<LoginBloc, LoginState>(
-        buildWhen: (previous, current) => previous.email != current.email,
-        builder: (context, state) {
-          return TextField(
-            key: const Key('login_email'),
-            onChanged: (email) => context.bloc<LoginBloc>().add(EmailChanged(email)),
-            keyboardType: TextInputType.emailAddress,
-            decoration: InputDecoration(
-              hintText: 'email@you.com',
-              labelText: 'Email Address',
-              errorText: state.emailError
-            )
-          );
-        });
+      buildWhen: (previous, current) => previous.email != current.email,
+      builder: (context, state) {
+        return EmailField(
+            onChange: (email) => context.bloc<LoginBloc>().add(EmailChanged(email)),
+            errorMessage: state.emailError,
+        );
+    });
   }
 
 }
