@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:login_bloc_library/src/models/email.dart';
-import 'package:login_bloc_library/src/models/password.dart';
+import 'package:login_bloc_library/src/utils/validation/email_validation.dart';
+import 'package:login_bloc_library/src/utils/validation/password_validation.dart';
 
 class LoginState extends Equatable {
   const LoginState({

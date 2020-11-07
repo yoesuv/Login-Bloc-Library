@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:login_bloc_library/src/blocs/login_bloc.dart';
-import 'package:login_bloc_library/src/screens/login_screen.dart';
+import 'package:login_bloc_library/src/core/bloc/login_bloc.dart';
+import 'package:login_bloc_library/src/ui/screens/login_screen.dart';
 
 class App extends StatelessWidget {
   @override
