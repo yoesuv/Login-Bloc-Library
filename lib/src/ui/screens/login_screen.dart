@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_bloc_library/src/core/bloc/login_bloc.dart';
 import 'package:login_bloc_library/src/core/event/login_event.dart';
 import 'package:login_bloc_library/src/core/state/login_state.dart';
+import 'package:login_bloc_library/src/ui/shared/button_primary.dart';
 import 'package:login_bloc_library/src/ui/shared/email_field.dart';
 import 'package:login_bloc_library/src/ui/shared/password_field.dart';
 
@@ -18,7 +19,7 @@ class LoginScreen extends StatelessWidget {
               _emailInput(),
               _passwordInput(),
               Container(margin: EdgeInsets.only(top: 20.0)),
-              _LoginButton()
+              _loginButton()
             ],
           ),
         )
@@ -48,28 +49,17 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-}
-
-class _LoginButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
+  Widget _loginButton() {
     return BlocBuilder<LoginBloc, LoginState>(
       builder: (context, state) {
-        return Container(
-          height: 45,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: state.email.valid && state.password.valid ? Colors.teal : Colors.grey[400],
-            borderRadius: BorderRadius.circular(8)
-          ),
-          child: MaterialButton(
-            onPressed:  state.email.valid && state.password.valid ? (){
-              print("Login Screen # login bibeh");
-            } : null,
-            child: Text('Login', style: TextStyle(color: Colors.white, fontSize: 16)),
-          ),
+        return ButtonPrimary(
+          enable: state.email.valid && state.password.valid,
+          onPress: () {
+            print("Login Screen # login bibeh");
+          },
+          text: 'Login'
         );
-      },
-    );
+      });
   }
+
 }
