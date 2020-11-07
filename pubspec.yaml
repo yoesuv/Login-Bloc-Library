@@ -33,6 +33,7 @@ dependencies:
   equatable: ^1.2.5
   formz: ^0.3.2
   flutter_bloc: ^6.0.0
+  fluttertoast: ^7.1.1
 
 dev_dependencies:
   flutter_test:

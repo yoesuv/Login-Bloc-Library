@@ -6,6 +6,7 @@ import 'package:login_bloc_library/src/core/state/login_state.dart';
 import 'package:login_bloc_library/src/ui/shared/button_primary.dart';
 import 'package:login_bloc_library/src/ui/shared/email_field.dart';
 import 'package:login_bloc_library/src/ui/shared/password_field.dart';
+import 'package:login_bloc_library/src/utils/app_helper.dart';
 
 class LoginScreen extends StatelessWidget {
 
@@ -55,7 +56,7 @@ class LoginScreen extends StatelessWidget {
         return ButtonPrimary(
           enable: state.email.valid && state.password.valid,
           onPress: () {
-            print("Login Screen # login bibeh");
+            showToastSuccess('Submit Login');
           },
           text: 'Login'
         );
