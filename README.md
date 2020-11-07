@@ -1,16 +1,26 @@
-# login_bloc_library
+## Login Bloc Library 1.0.0 ##
 
-A new Flutter project.
+A simple login form application.  
+using [bloc library](https://bloclibrary.dev/#/)  
+Download apk [here](https://www.dropbox.com/s/taq8jn1drrvaurm)  
 
-## Getting Started
+#### Dependencies ####
+```
+Flutter 1.22.1 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision f30b7f4db9 (4 weeks ago) • 2020-10-08 10:06:30 -0700
+Engine • revision 75bef9f6c8
+Tools • Dart 2.10.1
+```
 
-This project is a starting point for a Flutter application.
+#### Screenshot ####
+| Valid | Email Error | Password Error |
+| :---: | :---: | :---: |
+| ![](https://images2.imgbox.com/90/35/qvPL6iso_o.png) | ![](https://images2.imgbox.com/ac/d8/rhAJ7uBf_o.png) | ![](https://images2.imgbox.com/5a/3c/rOMCihDm_o.png) |
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### List Library ####
+- [Bloc](https://pub.dev/packages/bloc)
+- [Email Validator](https://pub.dev/packages/email_validator)
+- [Equatable](https://pub.dev/packages/equatable)
+- [Formz](https://pub.dev/packages/formz)
+- [Flutter Bloc](https://pub.dev/packages/flutter_bloc)
+- [Flutter Toast](https://pub.dev/packages/fluttertoast)
