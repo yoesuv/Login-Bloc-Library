@@ -1,20 +1,16 @@
 import 'package:formz/formz.dart';
 
-enum PasswordStatus {
-  empty, min_char
-}
-
-class Password extends FormzInput<String, PasswordStatus> {
+class Password extends FormzInput<String, String> {
 
   const Password.pure(): super.pure('');
   const Password.dirty([String value = '']): super.dirty(value);
 
   @override
-  PasswordStatus validator(String value) {
+  String validator(String value) {
     if (value.isEmpty) {
-      return PasswordStatus.empty;
+      return 'Password is Empty';
     } else if (value.length < 3) {
-      return PasswordStatus.min_char;
+      return 'Password Min 3 character';
     } else {
       return null;
     }

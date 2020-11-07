@@ -8,20 +8,23 @@ class LoginState extends Equatable {
     this.status = FormzStatus.pure,
     this.email = const Email.pure(),
     this.emailError,
-    this.password = const Password.pure()
+    this.password = const Password.pure(),
+    this.passwordError,
   });
 
   final FormzStatus status;
   final Email email;
-  final String emailError;
+  final String emailError, passwordError;
   final Password password;
 
-  LoginState copyWith({FormzStatus status, Email email, String emailError, Password password}) {
+  LoginState copyWith({FormzStatus status, Email email, String emailError, Password password, String passwordError}) {
     return LoginState(
         status: status ?? this.status,
         email: email ?? this.email,
         emailError: emailError,
-        password: password ?? this.password);
+        password: password ?? this.password,
+        passwordError: passwordError
+    );
   }
 
   @override

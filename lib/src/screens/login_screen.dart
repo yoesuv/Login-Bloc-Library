@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_bloc_library/src/blocs/login_bloc.dart';
 import 'package:login_bloc_library/src/blocs/login_event.dart';
 import 'package:login_bloc_library/src/blocs/login_state.dart';
-import 'package:login_bloc_library/src/models/password.dart';
 
 class LoginScreen extends StatelessWidget {
 
@@ -60,26 +59,11 @@ class _PasswordField extends StatelessWidget {
               decoration: InputDecoration(
                   hintText: 'your password',
                   labelText: 'Password',
-                  errorText: errorTextPassword(state)
+                  errorText: state.passwordError
               )
           );
         });
   }
-
-  String errorTextPassword(LoginState state) {
-    if (state.password.invalid) {
-      if (state.password.error == PasswordStatus.empty) {
-        return 'Password Is Empty';
-      } else if (state.password.error == PasswordStatus.min_char) {
-        return 'Password Min 3 Character';
-      } else {
-        return 'Password Invalid';
-      }
-    } else {
-      return null;
-    }
-  }
-
 }
 
 class _LoginButton extends StatelessWidget {
