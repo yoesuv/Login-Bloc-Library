@@ -4,6 +4,7 @@ import 'package:login_bloc_library/src/core/bloc/login_bloc.dart';
 import 'package:login_bloc_library/src/core/event/login_event.dart';
 import 'package:login_bloc_library/src/core/state/login_state.dart';
 import 'package:login_bloc_library/src/ui/shared/email_field.dart';
+import 'package:login_bloc_library/src/ui/shared/password_field.dart';
 
 class LoginScreen extends StatelessWidget {
 
@@ -15,7 +16,7 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             children: [
               _emailInput(),
-              _PasswordField(),
+              _passwordInput(),
               Container(margin: EdgeInsets.only(top: 20.0)),
               _LoginButton()
             ],
@@ -35,26 +36,18 @@ class LoginScreen extends StatelessWidget {
     });
   }
 
-}
-
-class _PasswordField extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
+  Widget _passwordInput() {
     return BlocBuilder<LoginBloc, LoginState>(
-        buildWhen: (previous, current) => previous.password != current.password,
-        builder: (context, state) {
-          return TextField(
-              key: const Key('login_password'),
-              onChanged: (password) => context.bloc<LoginBloc>().add(PasswordChanged(password)),
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                  hintText: 'your password',
-                  labelText: 'Password',
-                  errorText: state.passwordError
-              )
+      buildWhen: (previous, current) => previous.password != current.password,
+      builder: (context, state) {
+          return PasswordField(
+              onChange: (password) => context.bloc<LoginBloc>().add(PasswordChanged(password)),
+              errorMessage: state.passwordError
           );
-        });
+      }
+    );
   }
+
 }
 
 class _LoginButton extends StatelessWidget {
