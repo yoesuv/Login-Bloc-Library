@@ -1,15 +1,15 @@
-## Login Bloc Library 1.0.0 ##
+## Login Bloc Library 1.0.1 ##
 
 A simple login form application.  
 using [bloc library](https://bloclibrary.dev/#/)  
-Download apk [here](https://www.dropbox.com/s/taq8jn1drrvaurm)  
+Download apk [here](https://www.dropbox.com/s/ndsqc8w9u4uzb8p)  
 
 #### Dependencies ####
 ```
-Flutter 1.22.1 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision f30b7f4db9 (4 weeks ago) • 2020-10-08 10:06:30 -0700
-Engine • revision 75bef9f6c8
-Tools • Dart 2.10.1
+Flutter 1.22.5 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 7891006299 (4 weeks ago) • 2020-12-10 11:54:40 -0800
+Engine • revision ae90085a84
+Tools • Dart 2.10.4
 ```
 
 #### Screenshot ####
