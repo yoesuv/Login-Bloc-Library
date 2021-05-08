@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:login_bloc_library/src/core/bloc/login_bloc.dart';
-import 'package:login_bloc_library/src/ui/screens/login_screen.dart';
+import 'package:login_bloc_library/src/core/routes/app_route.dart';
 
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: BlocProvider(
-          create: (context) {
-              return LoginBloc();
-          },
-          child: LoginScreen(),
-        ),
+      title: 'Login & Register',
+      theme: ThemeData(
+        primaryColor: Colors.teal[700]
       ),
+      onGenerateRoute: AppRoute.routes,
     );
   }
 }

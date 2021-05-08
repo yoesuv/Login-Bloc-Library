@@ -12,8 +12,9 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final  LoginBloc bloc = context.read<LoginBloc>();
-    return SafeArea(
+    final LoginBloc bloc = context.read<LoginBloc>();
+    return Scaffold(
+      body: SafeArea(
         child: Container(
           margin: EdgeInsets.all(16.0),
           child: Column(
@@ -25,6 +26,7 @@ class LoginScreen extends StatelessWidget {
             ],
           ),
         )
+      ),
     );
   }
 
