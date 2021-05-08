@@ -12,13 +12,14 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final  LoginBloc bloc = context.read<LoginBloc>();
     return SafeArea(
         child: Container(
           margin: EdgeInsets.all(16.0),
           child: Column(
             children: [
-              _emailInput(),
-              _passwordInput(),
+              _emailInput(bloc),
+              _passwordInput(bloc),
               Container(margin: EdgeInsets.only(top: 20.0)),
               _loginButton()
             ],
@@ -27,23 +28,23 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  Widget _emailInput() {
+  Widget _emailInput(LoginBloc bloc) {
     return BlocBuilder<LoginBloc, LoginState>(
       buildWhen: (previous, current) => previous.email != current.email,
       builder: (context, state) {
         return EmailField(
-            onChange: (email) => context.bloc<LoginBloc>().add(EmailChanged(email)),
+            onChange: (email) => bloc.add(EmailChanged(email)),
             errorMessage: state.emailError,
         );
     });
   }
 
-  Widget _passwordInput() {
+  Widget _passwordInput(LoginBloc bloc) {
     return BlocBuilder<LoginBloc, LoginState>(
       buildWhen: (previous, current) => previous.password != current.password,
       builder: (context, state) {
           return PasswordField(
-              onChange: (password) => context.bloc<LoginBloc>().add(PasswordChanged(password)),
+              onChange: (password) => bloc.add(PasswordChanged(password)),
               errorMessage: state.passwordError
           );
       }
