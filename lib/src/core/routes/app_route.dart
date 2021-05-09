@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_bloc_library/src/core/bloc/login_bloc.dart';
+import 'package:login_bloc_library/src/core/bloc/register_bloc.dart';
 import 'package:login_bloc_library/src/ui/screens/login_screen.dart';
 import 'package:login_bloc_library/src/ui/screens/register_screen.dart';
 
@@ -18,7 +19,10 @@ class AppRoute {
     } else if (settings.name == RegisterScreen.routeName) {
       return MaterialPageRoute(
           builder: (context) {
-            return RegisterScreen();
+            return BlocProvider(
+              create: (context) => RegisterBloc(),
+              child: RegisterScreen(),
+            );
           }
       );
     } else {
