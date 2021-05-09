@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_bloc_library/src/core/bloc/register_bloc.dart';
 import 'package:login_bloc_library/src/core/event/register_event.dart';
 import 'package:login_bloc_library/src/core/state/register_state.dart';
+import 'package:login_bloc_library/src/ui/shared/email_field.dart';
 import 'package:login_bloc_library/src/ui/shared/full_name_field.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -22,6 +23,7 @@ class RegisterScreen extends StatelessWidget {
           child: Column(
             children: [
               _fullNameInput(bloc),
+              _emailInput(bloc),
             ],
           ),
         ),
@@ -39,6 +41,18 @@ Widget _fullNameInput(RegisterBloc bloc) {
         errorMessage: state.fullNameError,
       );
     }
+  );
+}
+
+Widget _emailInput(RegisterBloc bloc) {
+  return BlocBuilder<RegisterBloc, RegisterState>(
+    buildWhen: (previous, current) => previous.email != current.email,
+    builder: (context, state) {
+      return EmailField(
+        onChange: (email) => bloc.add(EmailChanged(email)),
+        errorMessage: state.emailError
+      );
+    },
   );
 }
 
