@@ -3,9 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_bloc_library/src/core/bloc/register_bloc.dart';
 import 'package:login_bloc_library/src/core/event/register_event.dart';
 import 'package:login_bloc_library/src/core/state/register_state.dart';
+import 'package:login_bloc_library/src/ui/shared/button_primary.dart';
 import 'package:login_bloc_library/src/ui/shared/email_field.dart';
 import 'package:login_bloc_library/src/ui/shared/full_name_field.dart';
 import 'package:login_bloc_library/src/ui/shared/password_field.dart';
+import 'package:login_bloc_library/src/utils/app_helper.dart';
 
 class RegisterScreen extends StatelessWidget {
 
@@ -26,7 +28,9 @@ class RegisterScreen extends StatelessWidget {
               _fullNameInput(bloc),
               _emailInput(bloc),
               _passwordInput(bloc),
-              _confirmPasswordInput(bloc)
+              _confirmPasswordInput(bloc),
+              Container(margin: EdgeInsets.only(top: 20.0)),
+              _registerButton()
             ],
           ),
         ),
@@ -84,3 +88,15 @@ Widget _confirmPasswordInput(RegisterBloc bloc) {
   );
 }
 
+Widget _registerButton() {
+  return BlocBuilder<RegisterBloc, RegisterState>(
+    builder: (context, state) {
+      return ButtonPrimary(
+          enable: state.fullName.valid && state.email.valid && state.password.valid && state.confirmPassword.valid,
+          onPress: () {
+            showToastSuccess('Submit Register');
+          },
+          text: 'Register');
+    },
+  );
+}
