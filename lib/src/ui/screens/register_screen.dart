@@ -25,7 +25,8 @@ class RegisterScreen extends StatelessWidget {
             children: [
               _fullNameInput(bloc),
               _emailInput(bloc),
-              _passwordInput(bloc)
+              _passwordInput(bloc),
+              _confirmPasswordInput(bloc)
             ],
           ),
         ),
@@ -65,6 +66,19 @@ Widget _passwordInput(RegisterBloc bloc) {
       return PasswordField(
           onChange: (password) => bloc.add(RegisterPasswordChanged(password)),
           errorMessage: state.passwordError
+      );
+    },
+  );
+}
+
+Widget _confirmPasswordInput(RegisterBloc bloc) {
+  return BlocBuilder<RegisterBloc, RegisterState>(
+    buildWhen: (previous, current) => previous.confirmPassword != current.confirmPassword,
+    builder: (context, state) {
+      return PasswordField(
+          onChange: (password) => bloc.add(RegisterConfirmPasswordChanged(password)),
+          errorMessage: state.confirmPasswordError,
+          isConfirmPassword: true,
       );
     },
   );

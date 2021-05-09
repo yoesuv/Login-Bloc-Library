@@ -4,8 +4,9 @@ class PasswordField extends StatefulWidget {
 
   final Function onChange;
   final String errorMessage;
+  final bool isConfirmPassword;
 
-  PasswordField({@required this.onChange, @required this.errorMessage});
+  PasswordField({@required this.onChange, @required this.errorMessage, this.isConfirmPassword = false});
 
   @override
   PasswordFieldState createState() {
@@ -31,8 +32,8 @@ class PasswordFieldState extends State<PasswordField>{
         keyboardType: TextInputType.visiblePassword,
         obscureText: _isToggle,
         decoration: InputDecoration(
-            hintText: 'your password',
-            labelText: 'Password',
+            hintText: widget.isConfirmPassword ? 'confirm password' : 'your password',
+            labelText: widget.isConfirmPassword ? 'Confirm Password' : 'Password',
             errorText: widget.errorMessage,
             suffixIcon: InkWell(
               child: Icon(_isToggle ? Icons.visibility_off : Icons.visibility),
