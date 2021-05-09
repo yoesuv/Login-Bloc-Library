@@ -5,6 +5,7 @@ import 'package:login_bloc_library/src/core/event/register_event.dart';
 import 'package:login_bloc_library/src/core/state/register_state.dart';
 import 'package:login_bloc_library/src/ui/shared/email_field.dart';
 import 'package:login_bloc_library/src/ui/shared/full_name_field.dart';
+import 'package:login_bloc_library/src/ui/shared/password_field.dart';
 
 class RegisterScreen extends StatelessWidget {
 
@@ -24,6 +25,7 @@ class RegisterScreen extends StatelessWidget {
             children: [
               _fullNameInput(bloc),
               _emailInput(bloc),
+              _passwordInput(bloc)
             ],
           ),
         ),
@@ -51,6 +53,18 @@ Widget _emailInput(RegisterBloc bloc) {
       return EmailField(
         onChange: (email) => bloc.add(EmailChanged(email)),
         errorMessage: state.emailError
+      );
+    },
+  );
+}
+
+Widget _passwordInput(RegisterBloc bloc) {
+  return BlocBuilder<RegisterBloc, RegisterState>(
+    buildWhen: (previous, current) => previous.password != current.password,
+    builder: (context, state) {
+      return PasswordField(
+          onChange: (password) => bloc.add(RegisterPasswordChanged(password)),
+          errorMessage: state.passwordError
       );
     },
   );

@@ -4,6 +4,7 @@ import 'package:login_bloc_library/src/core/event/register_event.dart';
 import 'package:login_bloc_library/src/core/state/register_state.dart';
 import 'package:login_bloc_library/src/utils/validation/email_validation.dart';
 import 'package:login_bloc_library/src/utils/validation/full_name_validation.dart';
+import 'package:login_bloc_library/src/utils/validation/password_validation.dart';
 
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
 
@@ -15,6 +16,8 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       yield _fullNameChangedToState(event, state);
     } else if (event is EmailChanged) {
       yield _emailChangedToState(event, state);
+    } else if (event is RegisterPasswordChanged) {
+      yield _passwordChangedToState(event, state);
     }
   }
 
@@ -33,6 +36,15 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       status: Formz.validate([state.email, email]),
       email: email,
       emailError: email.error
+    );
+  }
+
+  RegisterState _passwordChangedToState(RegisterPasswordChanged event, RegisterState state) {
+    final password = Password.dirty(event.password);
+    return state.copyWith(
+      status: Formz.validate([state.password, password]),
+      password: password,
+      passwordError: password.error
     );
   }
 
