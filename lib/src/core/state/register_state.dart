@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:login_bloc_library/src/utils/validation/confirm_password_validation.dart';
 import 'package:login_bloc_library/src/utils/validation/email_validation.dart';
 import 'package:login_bloc_library/src/utils/validation/full_name_validation.dart';
 import 'package:login_bloc_library/src/utils/validation/password_validation.dart';
+import 'package:login_bloc_library/src/utils/validation/register_password.dart';
 
 class RegisterState extends Equatable {
 
@@ -15,7 +15,7 @@ class RegisterState extends Equatable {
     this.emailError,
     this.password = const Password.pure(),
     this.passwordError,
-    this.confirmPassword = const ConfirmPassword.pure(),
+    this.confirmPassword = const RegisterPassword.pure(),
     this.confirmPasswordError
   });
 
@@ -23,11 +23,11 @@ class RegisterState extends Equatable {
   final FullName fullName;
   final Email email;
   final Password password;
-  final ConfirmPassword confirmPassword;
+  final RegisterPassword confirmPassword;
   final String fullNameError, emailError, passwordError, confirmPasswordError;
 
   RegisterState copyWith({FormzStatus status, FullName fullName, String fullNameError, Email email, String emailError,
-    Password password, String passwordError, ConfirmPassword confirmPassword, String confirmPasswordError}) {
+    Password password, String passwordError, RegisterPassword confirmPassword, String confirmPasswordError}) {
     return RegisterState(
       status: status ?? this.status,
       fullName: fullName ?? this.fullName,

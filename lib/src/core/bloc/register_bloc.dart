@@ -2,10 +2,10 @@ import 'package:bloc/bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:login_bloc_library/src/core/event/register_event.dart';
 import 'package:login_bloc_library/src/core/state/register_state.dart';
-import 'package:login_bloc_library/src/utils/validation/confirm_password_validation.dart';
 import 'package:login_bloc_library/src/utils/validation/email_validation.dart';
 import 'package:login_bloc_library/src/utils/validation/full_name_validation.dart';
 import 'package:login_bloc_library/src/utils/validation/password_validation.dart';
+import 'package:login_bloc_library/src/utils/validation/register_password.dart';
 
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
 
@@ -44,17 +44,28 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
 
   RegisterState _passwordChangedToState(RegisterPasswordChanged event, RegisterState state) {
     final password = Password.dirty(event.password);
+    final confirmPassword = RegisterPassword.dirty(password: password.value, value: state.confirmPassword.value);
     return state.copyWith(
-      status: Formz.validate([state.password, password]),
+      status: Formz.validate([
+        password,
+        state.confirmPassword
+      ]),
       password: password,
+      confirmPassword: confirmPassword,
       passwordError: password.error
     );
   }
 
   RegisterState _confirmPasswordChangedToState(RegisterConfirmPasswordChanged event, RegisterState state) {
-    final confirmPassword = ConfirmPassword.dirty(event.confirmPassword);
+    final confirmPassword = RegisterPassword.dirty(
+      password: state.password.value,
+      value: event.confirmPassword
+    );
     return state.copyWith(
-      status: Formz.validate([state.confirmPassword, confirmPassword]),
+      status: Formz.validate([
+        state.password,
+        confirmPassword
+      ]),
       confirmPassword: confirmPassword,
       confirmPasswordError: confirmPassword.error
     );
