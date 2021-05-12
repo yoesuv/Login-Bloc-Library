@@ -15,6 +15,9 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final LoginBloc bloc = context.read<LoginBloc>();
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Login'),
+      ),
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.all(16.0),
