@@ -3,7 +3,7 @@ import 'package:formz/formz.dart';
 import 'package:login_bloc_library/src/utils/validation/email_validation.dart';
 import 'package:login_bloc_library/src/utils/validation/full_name_validation.dart';
 import 'package:login_bloc_library/src/utils/validation/password_validation.dart';
-import 'package:login_bloc_library/src/utils/validation/register_password.dart';
+import 'package:login_bloc_library/src/utils/validation/password_confirm_validation.dart';
 
 class RegisterState extends Equatable {
 
@@ -15,19 +15,19 @@ class RegisterState extends Equatable {
     this.emailError,
     this.password = const Password.pure(),
     this.passwordError,
-    this.confirmPassword = const RegisterPassword.pure(),
-    this.confirmPasswordError
+    this.passwordConfirm = const PasswordConfirm.pure(),
+    this.passwordConfirmError
   });
 
   final FormzStatus status;
   final FullName fullName;
   final Email email;
   final Password password;
-  final RegisterPassword confirmPassword;
-  final String fullNameError, emailError, passwordError, confirmPasswordError;
+  final PasswordConfirm passwordConfirm;
+  final String fullNameError, emailError, passwordError, passwordConfirmError;
 
   RegisterState copyWith({FormzStatus status, FullName fullName, String fullNameError, Email email, String emailError,
-    Password password, String passwordError, RegisterPassword confirmPassword, String confirmPasswordError}) {
+    Password password, String passwordError, PasswordConfirm passwordConfirm, String passwordConfirmError}) {
     return RegisterState(
       status: status ?? this.status,
       fullName: fullName ?? this.fullName,
@@ -36,12 +36,12 @@ class RegisterState extends Equatable {
       emailError: emailError,
       password: password ?? this.password,
       passwordError: passwordError,
-      confirmPassword: confirmPassword ?? this.confirmPassword,
-      confirmPasswordError: confirmPasswordError
+      passwordConfirm: passwordConfirm ?? this.passwordConfirm,
+      passwordConfirmError: passwordConfirmError
     );
   }
 
   @override
-  List<Object> get props => [status, fullName, email, password, confirmPassword];
+  List<Object> get props => [status, fullName, email, password, passwordConfirm];
 
 }

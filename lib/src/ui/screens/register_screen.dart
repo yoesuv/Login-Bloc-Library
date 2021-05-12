@@ -77,11 +77,11 @@ Widget _passwordInput(RegisterBloc bloc) {
 
 Widget _confirmPasswordInput(RegisterBloc bloc) {
   return BlocBuilder<RegisterBloc, RegisterState>(
-    buildWhen: (previous, current) => previous.confirmPassword != current.confirmPassword,
+    buildWhen: (previous, current) => previous.passwordConfirm != current.passwordConfirm,
     builder: (context, state) {
       return PasswordField(
           onChange: (password) => bloc.add(RegisterConfirmPasswordChanged(password)),
-          errorMessage: state.confirmPasswordError,
+          errorMessage: state.passwordConfirmError,
           isConfirmPassword: true,
       );
     },
@@ -92,7 +92,7 @@ Widget _registerButton() {
   return BlocBuilder<RegisterBloc, RegisterState>(
     builder: (context, state) {
       return ButtonPrimary(
-          enable: state.fullName.valid && state.email.valid && state.password.valid && state.confirmPassword.valid,
+          enable: state.fullName.valid && state.email.valid && state.password.valid && state.passwordConfirm.valid,
           onPress: () {
             showToastSuccess('Submit Register');
           },
