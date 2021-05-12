@@ -1,6 +1,6 @@
 ## Login Register Bloc Library 1.1.0 ##
 
-A simple login form application.  
+A simple login & register form application.  
 using [bloc library](https://bloclibrary.dev/#/)  
 Download apk [here](https://www.dropbox.com/s/ob196jo79p455cz)  
 
@@ -13,9 +13,9 @@ Tools • Dart 2.12.3
 ```
 
 #### Screenshot ####
-| Valid | Email Error | Password Error |
-| :---: | :---: | :---: |
-| ![](https://images2.imgbox.com/90/35/qvPL6iso_o.png) | ![](https://images2.imgbox.com/ac/d8/rhAJ7uBf_o.png) | ![](https://images2.imgbox.com/5a/3c/rOMCihDm_o.png) |
+| ![](https://images2.imgbox.com/85/eb/Lt8ZO2wF_o.jpg) | ![](https://images2.imgbox.com/ca/15/kD0nOJ09_o.jpg) | ![](https://images2.imgbox.com/04/c2/kf4cG3DG_o.jpg) | ![](https://images2.imgbox.com/76/88/f6YPlkBt_o.jpg) |
+| :---: | :---: | :---: | :---: |
+| ![](https://images2.imgbox.com/52/de/cltNsQIc_o.jpg) | ![](https://images2.imgbox.com/3b/44/BwyT7Oli_o.jpg) | ![](https://images2.imgbox.com/5c/aa/Q2T8C2Us_o.jpg) | ![](https://images2.imgbox.com/43/8d/ptzDPFlE_o.jpg) |
 
 #### List Library ####
 - [Bloc](https://pub.dev/packages/bloc)
