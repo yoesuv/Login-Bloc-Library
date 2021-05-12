@@ -1,4 +1,5 @@
 import 'package:formz/formz.dart';
+import 'package:login_bloc_library/src/core/data/constants.dart';
 
 class Password extends FormzInput<String, String> {
 
@@ -9,8 +10,8 @@ class Password extends FormzInput<String, String> {
   String validator(String value) {
     if (value.isEmpty) {
       return 'Password is Empty';
-    } else if (value.length < 3) {
-      return 'Password Min 3 character';
+    } else if (value.length < PASSWORD_MIN) {
+      return 'Password Min $PASSWORD_MIN character';
     } else {
       return null;
     }

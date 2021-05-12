@@ -30,7 +30,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginState _passwordChangedToState(PasswordChanged event, LoginState state) {
     final password = Password.dirty(event.password);
     return state.copyWith(
-        status: Formz.validate([state.email, password]),
+        status: Formz.validate([state.password, password]),
         password: password,
         passwordError: password.error
     );
