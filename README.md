@@ -1,21 +1,26 @@
-## Login Register Bloc Library 1.1.0 ##
+## Login Register Bloc Library ##
 
 A simple login & register form application.  
 using [bloc library](https://bloclibrary.dev/#/)  
-Download apk [here](https://www.dropbox.com/s/ob196jo79p455cz)  
+Download apk [here](https://www.dropbox.com/s/sk23kb0ko8ggjln)  
 
 #### Dependencies ####
 ```
-Flutter 2.0.5 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision adc687823a (4 weeks ago) • 2021-04-16 09:40:20 -0700
-Engine • revision b09f014e96
-Tools • Dart 2.12.3
+Flutter 2.2.3 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision f4abaa0735 (8 weeks ago) • 2021-07-01 12:46:11 -0700
+Engine • revision 241c87ad80
+Tools • Dart 2.13.4
 ```
 
-#### Screenshot ####
+#### Screenshot Android ####
 | ![](https://images2.imgbox.com/85/eb/Lt8ZO2wF_o.jpg) | ![](https://images2.imgbox.com/ca/15/kD0nOJ09_o.jpg) | ![](https://images2.imgbox.com/04/c2/kf4cG3DG_o.jpg) | ![](https://images2.imgbox.com/76/88/f6YPlkBt_o.jpg) |
 | :---: | :---: | :---: | :---: |
 | ![](https://images2.imgbox.com/52/de/cltNsQIc_o.jpg) | ![](https://images2.imgbox.com/3b/44/BwyT7Oli_o.jpg) | ![](https://images2.imgbox.com/5c/aa/Q2T8C2Us_o.jpg) | ![](https://images2.imgbox.com/43/8d/ptzDPFlE_o.jpg) |
+
+#### Screenshot iOS ####
+| ![](https://images2.imgbox.com/91/57/SKMUz8aD_o.png) | ![](https://images2.imgbox.com/79/f9/sI6tjWXX_o.png) | ![](https://images2.imgbox.com/2e/61/3nB4PX0t_o.png) | ![](https://images2.imgbox.com/f5/0d/UXXbY6Ne_o.png) |
+| :---: | :---: | :---: | :---: |
+| ![](https://images2.imgbox.com/62/0e/pMlloXBC_o.png) | ![](https://images2.imgbox.com/f2/6a/W8bb1eWQ_o.png) | ![](https://images2.imgbox.com/4b/91/6HnEvrSZ_o.png) | ![](https://images2.imgbox.com/88/b1/ICMF3peL_o.png) |
 
 #### List Library ####
 - [Bloc](https://pub.dev/packages/bloc)
