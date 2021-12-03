@@ -7,33 +7,27 @@ import 'package:login_bloc_library/src/utils/validation/password_validation.dart
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
-  LoginBloc() : super(const LoginState());
-
-  @override
-  Stream<LoginState> mapEventToState(LoginEvent event) async* {
-    if (event is EmailChanged) {
-      yield _emailChangedToState(event, state);
-    } else if (event is PasswordChanged) {
-      yield _passwordChangedToState(event, state);
-    }
+  LoginBloc() : super(const LoginState()) {
+    on<EmailChanged>(_emailChanged);
+    on<PasswordChanged>(_passwordChanged);
   }
 
-  LoginState _emailChangedToState(EmailChanged event, LoginState state) {
+  void _emailChanged(EmailChanged event, Emitter<LoginState> emit) {
     final email = Email.dirty(event.email);
-    return state.copyWith(
+    emit(state.copyWith(
         status: Formz.validate([state.email, email]),
         email: email,
         emailError: email.error
-    );
+    ));
   }
 
-  LoginState _passwordChangedToState(PasswordChanged event, LoginState state) {
+  void _passwordChanged(PasswordChanged event, Emitter<LoginState> emit) {
     final password = Password.dirty(event.password);
-    return state.copyWith(
+    emit(state.copyWith(
         status: Formz.validate([state.password, password]),
         password: password,
         passwordError: password.error
-    );
+    ));
   }
 
 }
