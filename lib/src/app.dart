@@ -7,7 +7,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Login & Register',
       theme: ThemeData(
-        primaryColor: Colors.teal[700]
+        primarySwatch: Colors.teal,
       ),
       onGenerateRoute: AppRoute.routes,
     );
