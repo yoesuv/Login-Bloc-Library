@@ -9,63 +9,55 @@ import 'package:login_bloc_library/src/utils/validation/password_confirm_validat
 
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
 
-  RegisterBloc(): super(const RegisterState());
-
-  @override
-  Stream<RegisterState> mapEventToState(RegisterEvent event) async* {
-    if (event is FullNameChanged) {
-      yield _fullNameChangedToState(event, state);
-    } else if (event is EmailChanged) {
-      yield _emailChangedToState(event, state);
-    } else if (event is RegisterPasswordChanged) {
-      yield _passwordChangedToState(event, state);
-    } else if (event is RegisterConfirmPasswordChanged) {
-      yield _confirmPasswordChangedToState(event, state);
-    }
+  RegisterBloc(): super(const RegisterState()) {
+    on<FullNameChanged>(_fullNameChanged);
+    on<EmailChanged>(_emailChanged);
+    on<RegisterPasswordChanged>(_passwordChanged);
+    on<RegisterConfirmPasswordChanged>(_confirmPasswordChanged);
   }
 
-  RegisterState _fullNameChangedToState(FullNameChanged event, RegisterState state) {
+  void _fullNameChanged(FullNameChanged event, Emitter<RegisterState> emit) {
     final fullName = FullName.dirty(event.fullName);
-    return state.copyWith(
+    emit(state.copyWith(
       status: Formz.validate([state.fullName, fullName]),
       fullName: fullName,
-      fullNameError: fullName.error
-    );
+      fullNameError: fullName.error,
+    ));
   }
 
-  RegisterState _emailChangedToState(EmailChanged event, RegisterState state) {
+  void _emailChanged(EmailChanged event, Emitter<RegisterState> emit) {
     final email = Email.dirty(event.email);
-    return state.copyWith(
+    emit(state.copyWith(
       status: Formz.validate([state.email, email]),
       email: email,
-      emailError: email.error
-    );
+      emailError: email.error,
+    ));
   }
 
-  RegisterState _passwordChangedToState(RegisterPasswordChanged event, RegisterState state) {
+  void  _passwordChanged(RegisterPasswordChanged event, Emitter<RegisterState> emit) {
     final password = Password.dirty(event.password);
     final confirmPassword = PasswordConfirm.dirty(password: password.value, value: state.passwordConfirm.value);
-    return state.copyWith(
+    emit(state.copyWith(
       status: Formz.validate([
         password,
         state.passwordConfirm
       ]),
       password: password,
       passwordConfirm: confirmPassword,
-      passwordError: password.error
-    );
+      passwordError: password.error,
+    ));
   }
 
-  RegisterState _confirmPasswordChangedToState(RegisterConfirmPasswordChanged event, RegisterState state) {
+  void _confirmPasswordChanged(RegisterConfirmPasswordChanged event, Emitter<RegisterState> emit) {
     final passwordConfirm = PasswordConfirm.dirty(password: state.password.value, value: event.confirmPassword);
-    return state.copyWith(
+    emit(state.copyWith(
       status: Formz.validate([
         state.password,
         passwordConfirm
       ]),
       passwordConfirm: passwordConfirm,
-      passwordConfirmError: passwordConfirm.error
-    );
+      passwordConfirmError: passwordConfirm.error,
+    ));
   }
 
 }
