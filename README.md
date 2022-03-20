@@ -1,8 +1,8 @@
 ## Login Register Bloc Library ##
 
-A simple login & register form application.  
+A simple application login & register form validation.  
 using [bloc library](https://bloclibrary.dev/#/)  
-Download apk [here](https://www.dropbox.com/s/gaiosy42c3vl6ho)  
+Download apk [here](https://www.dropbox.com/s/dhqxbaz1zagbrci)  
 
 #### Dependencies ####
 ```
