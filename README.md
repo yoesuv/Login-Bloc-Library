@@ -23,9 +23,8 @@ Tools • Dart 2.16.1 • DevTools 2.9.2
 | ![](https://images2.imgbox.com/62/0e/pMlloXBC_o.png) | ![](https://images2.imgbox.com/f2/6a/W8bb1eWQ_o.png) | ![](https://images2.imgbox.com/4b/91/6HnEvrSZ_o.png) | ![](https://images2.imgbox.com/88/b1/ICMF3peL_o.png) |
 
 #### List Library ####
-- [Bloc](https://pub.dev/packages/bloc)
+- [Bloc Library](https://bloclibrary.dev/)
 - [Email Validator](https://pub.dev/packages/email_validator)
 - [Equatable](https://pub.dev/packages/equatable)
 - [Formz](https://pub.dev/packages/formz)
-- [Flutter Bloc](https://pub.dev/packages/flutter_bloc)
 - [Flutter Toast](https://pub.dev/packages/fluttertoast)
