@@ -6,10 +6,10 @@ Download apk [here](https://www.dropbox.com/s/gaiosy42c3vl6ho)
 
 #### Dependencies ####
 ```
-Flutter 2.5.3 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision 18116933e7 (7 weeks ago) • 2021-10-15 10:46:35 -0700
-Engine • revision d3ea636dc5
-Tools • Dart 2.14.4
+Flutter 2.10.3 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 7e9793dee1 (3 weeks ago) • 2022-03-02 11:23:12 -0600
+Engine • revision bd539267b4
+Tools • Dart 2.16.1 • DevTools 2.9.2
 ```
 
 #### Screenshot Android ####
