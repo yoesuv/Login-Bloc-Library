@@ -7,7 +7,7 @@ class Email extends FormzInput<String, String> {
   const Email.dirty([String value = '']): super.dirty(value);
 
   @override
-  String validator(String value) {
+  String? validator(String value) {
     if (value.isEmpty) {
       return 'Email is Empty';
     } else if (!EmailValidator.validate(value)) {
