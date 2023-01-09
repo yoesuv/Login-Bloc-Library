@@ -6,7 +6,6 @@ import 'package:login_bloc_library/src/utils/validation/password_validation.dart
 import 'package:login_bloc_library/src/utils/validation/password_confirm_validation.dart';
 
 class RegisterState extends Equatable {
-
   const RegisterState({
     this.status = FormzStatus.pure,
     this.fullName = const FullName.pure(),
@@ -16,7 +15,7 @@ class RegisterState extends Equatable {
     this.password = const Password.pure(),
     this.passwordError,
     this.passwordConfirm = const PasswordConfirm.pure(),
-    this.passwordConfirmError
+    this.passwordConfirmError,
   });
 
   final FormzStatus status;
@@ -24,10 +23,19 @@ class RegisterState extends Equatable {
   final Email email;
   final Password password;
   final PasswordConfirm passwordConfirm;
-  final String fullNameError, emailError, passwordError, passwordConfirmError;
+  final String? fullNameError, emailError, passwordError, passwordConfirmError;
 
-  RegisterState copyWith({FormzStatus status, FullName fullName, String fullNameError, Email email, String emailError,
-    Password password, String passwordError, PasswordConfirm passwordConfirm, String passwordConfirmError}) {
+  RegisterState copyWith({
+    FormzStatus? status,
+    FullName? fullName,
+    String? fullNameError,
+    Email? email,
+    String? emailError,
+    Password? password,
+    String? passwordError,
+    PasswordConfirm? passwordConfirm,
+    String? passwordConfirmError,
+  }) {
     return RegisterState(
       status: status ?? this.status,
       fullName: fullName ?? this.fullName,
@@ -37,11 +45,16 @@ class RegisterState extends Equatable {
       password: password ?? this.password,
       passwordError: passwordError,
       passwordConfirm: passwordConfirm ?? this.passwordConfirm,
-      passwordConfirmError: passwordConfirmError
+      passwordConfirmError: passwordConfirmError,
     );
   }
 
   @override
-  List<Object> get props => [status, fullName, email, password, passwordConfirm];
-
+  List<Object> get props => [
+        status,
+        fullName,
+        email,
+        password,
+        passwordConfirm,
+      ];
 }
