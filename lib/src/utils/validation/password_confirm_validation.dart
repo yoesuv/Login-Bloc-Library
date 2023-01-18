@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:formz/formz.dart';
 import 'package:login_bloc_library/src/core/data/constants.dart';
 
@@ -6,12 +5,12 @@ import 'package:login_bloc_library/src/core/data/constants.dart';
 class PasswordConfirm extends FormzInput<String, String> {
 
   const PasswordConfirm.pure({this.password}): super.pure('');
-  const PasswordConfirm.dirty({@required this.password, String value = ''}):super.dirty(value);
+  const PasswordConfirm.dirty({required this.password, String value = ''}):super.dirty(value);
 
-  final String password;
+  final String? password;
 
   @override
-  String validator(String value) {
+  String? validator(String value) {
     if (password != null) {
       if (value.trim().isEmpty) {
         return 'Password is Empty';

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
 class ButtonPrimary extends StatelessWidget {
-
   final bool enable;
-  final Function onPress;
+  final VoidCallback? onPress;
   final String text;
 
-  ButtonPrimary({@required this.enable, @required this.onPress, @required this.text});
+  ButtonPrimary({
+    this.enable = true,
+    this.onPress,
+    required this.text,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +18,11 @@ class ButtonPrimary extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
           color: enable ? Colors.teal : Colors.grey[400],
-          borderRadius: BorderRadius.circular(8)
-      ),
+          borderRadius: BorderRadius.circular(8)),
       child: MaterialButton(
-        onPressed:  enable ? onPress : null,
+        onPressed: enable ? onPress : null,
         child: Text(text, style: TextStyle(color: Colors.white, fontSize: 16)),
       ),
     );
   }
-
 }
