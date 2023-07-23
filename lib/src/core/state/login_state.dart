@@ -1,24 +1,23 @@
 import 'package:equatable/equatable.dart';
-import 'package:formz/formz.dart';
 import 'package:login_bloc_library/src/utils/validation/email_validation.dart';
 import 'package:login_bloc_library/src/utils/validation/password_validation.dart';
 
 class LoginState extends Equatable {
   const LoginState({
-    this.status = FormzStatus.pure,
+    this.status = false,
     this.email = const Email.pure(),
     this.emailError,
     this.password = const Password.pure(),
     this.passwordError,
   });
 
-  final FormzStatus status;
+  final bool status;
   final Email email;
   final String? emailError, passwordError;
   final Password password;
 
   LoginState copyWith({
-    FormzStatus? status,
+    bool? status,
     Email? email,
     String? emailError,
     Password? password,

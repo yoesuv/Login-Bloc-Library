@@ -63,7 +63,7 @@ class LoginScreen extends StatelessWidget {
     return BlocBuilder<LoginBloc, LoginState>(
       builder: (context, state) {
         return ButtonPrimary(
-          enable: state.email.valid && state.password.valid,
+          enable: state.status,
           onPress: () {
             showToastSuccess('Submit Login');
           },

@@ -92,7 +92,7 @@ Widget _registerButton() {
   return BlocBuilder<RegisterBloc, RegisterState>(
     builder: (context, state) {
       return ButtonPrimary(
-          enable: state.fullName.valid && state.email.valid && state.password.valid && state.passwordConfirm.valid,
+          enable: state.status,
           onPress: () {
             showToastSuccess('Submit Register');
           },
