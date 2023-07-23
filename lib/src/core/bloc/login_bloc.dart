@@ -15,7 +15,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   void _emailChanged(EmailChanged event, Emitter<LoginState> emit) {
     final email = Email.dirty(event.email);
     emit(state.copyWith(
-        status: Formz.validate([state.email, email]),
+        status: Formz.validate([email, state.password]),
         email: email,
         emailError: email.error
     ));
@@ -24,7 +24,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   void _passwordChanged(PasswordChanged event, Emitter<LoginState> emit) {
     final password = Password.dirty(event.password);
     emit(state.copyWith(
-        status: Formz.validate([state.password, password]),
+        status: Formz.validate([state.email, password]),
         password: password,
         passwordError: password.error
     ));

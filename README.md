@@ -2,14 +2,14 @@
 
 A simple application login & register form validation.  
 using [bloc library](https://bloclibrary.dev/#/)  
-Download apk [here](https://www.dropbox.com/s/s9ifrvjfbrhqhgi)  
+Download apk [here](https://share.ue.internxt.com/sh/file/3aded23cb88d64c772d0/5b4800330cf4f7a18061d98e931f25ff5393c6f10961f0b3c84bd503b9ad2bc0)  
 
 #### Dependencies ####
 ```
-Flutter 3.3.10 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision 135454af32 (12 days ago) • 2022-12-15 07:36:55 -0800
-Engine • revision 3316dd8728
-Tools • Dart 2.18.6 • DevTools 2.15.0
+Flutter 3.10.6 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision f468f3366c (10 days ago) • 2023-07-12 15:19:05 -0700
+Engine • revision cdbeda788a
+Tools • Dart 3.0.6 • DevTools 2.23.1
 ```
 
 #### Screenshot Android ####
@@ -23,8 +23,8 @@ Tools • Dart 2.18.6 • DevTools 2.15.0
 | ![](https://images2.imgbox.com/62/0e/pMlloXBC_o.png) | ![](https://images2.imgbox.com/f2/6a/W8bb1eWQ_o.png) | ![](https://images2.imgbox.com/4b/91/6HnEvrSZ_o.png) | ![](https://images2.imgbox.com/88/b1/ICMF3peL_o.png) |
 
 #### List Library ####
-- [Bloc Library](https://bloclibrary.dev/)
 - [Email Validator](https://pub.dev/packages/email_validator)
 - [Equatable](https://pub.dev/packages/equatable)
-- [Formz](https://pub.dev/packages/formz)
+- [Flutter Bloc](https://pub.dev/packages/flutter_bloc)
 - [Flutter Toast](https://pub.dev/packages/fluttertoast)
+- [Formz](https://pub.dev/packages/formz)
