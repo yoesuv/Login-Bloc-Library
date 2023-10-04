@@ -2,14 +2,14 @@
 
 A simple application login & register form validation.  
 using [bloc library](https://bloclibrary.dev/#/)  
-Download apk [here](https://share.ue.internxt.com/sh/file/3aded23cb88d64c772d0/5b4800330cf4f7a18061d98e931f25ff5393c6f10961f0b3c84bd503b9ad2bc0)  
+Download apk [here](https://e.pcloud.link/publink/show?code=XZkOCWZ8RckU7PQt3hCscmp9kJxRfu1I9bX)  
 
 #### Dependencies ####
 ```
-Flutter 3.10.6 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision f468f3366c (10 days ago) • 2023-07-12 15:19:05 -0700
-Engine • revision cdbeda788a
-Tools • Dart 3.0.6 • DevTools 2.23.1
+Flutter 3.13.6 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision ead455963c (7 days ago) • 2023-09-26 18:28:17 -0700
+Engine • revision a794cf2681
+Tools • Dart 3.1.3 • DevTools 2.25.0
 ```
 
 #### Screenshot Android ####
