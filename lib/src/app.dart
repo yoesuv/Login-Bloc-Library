@@ -7,7 +7,23 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Login & Register',
       theme: ThemeData(
-        primarySwatch: Colors.teal,
+        appBarTheme: AppBarTheme(
+          color: Colors.teal,
+          centerTitle: false,
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+          ),
+          iconTheme: IconThemeData(
+            color: Colors.white,
+          ),
+        ),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.teal,
+          surface: Colors.white,
+        ),
+        useMaterial3: true,
       ),
       onGenerateRoute: AppRoute.routes,
     );
