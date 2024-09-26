@@ -97,20 +97,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _toRegister(BuildContext context) {
     return Container(
+      width: double.infinity,
       child: TextButton(
         onPressed: () {
           Navigator.pushNamed(context, RegisterScreen.routeName);
         },
-        child: Text('Register', style: TextStyle(fontSize: 14)),
-        style: ButtonStyle(
-          overlayColor: MaterialStateProperty.all(Colors.transparent),
-          foregroundColor: MaterialStateProperty.resolveWith((states) {
-            if (states.contains(MaterialState.pressed)) {
-              return Colors.teal[700];
-            } else {
-              return Colors.black;
-            }
-          }),
+        child: Text(
+          'Register',
+          style: TextStyle(fontSize: 14),
         ),
       ),
     );
