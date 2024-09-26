@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: 20),
               _loginButton(),
               SizedBox(height: 20),
-              _toRegister(context)
+              _toRegister()
             ],
           ),
         ),
@@ -95,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget _toRegister(BuildContext context) {
+  Widget _toRegister() {
     return Container(
       width: double.infinity,
       child: TextButton(
