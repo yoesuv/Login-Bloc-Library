@@ -9,88 +9,104 @@ import 'package:login_bloc_library/src/ui/shared/email_field.dart';
 import 'package:login_bloc_library/src/ui/shared/password_field.dart';
 import 'package:login_bloc_library/src/utils/app_helper.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _LoginScreenState();
+  }
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  late LoginBloc _bloc;
+
+  @override
+  void initState() {
+    super.initState();
+    _bloc = context.read<LoginBloc>();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final LoginBloc bloc = context.read<LoginBloc>();
     return Scaffold(
       appBar: AppBar(
         title: Text('Login'),
       ),
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.all(16.0),
+          margin: EdgeInsets.all(16),
           child: Column(
             children: [
-              _emailInput(bloc),
-              _passwordInput(bloc),
-              Container(margin: EdgeInsets.only(top: 20.0)),
+              _emailInput(),
+              _passwordInput(),
+              SizedBox(height: 20),
               _loginButton(),
-              Container(margin: EdgeInsets.only(top: 20.0)),
-              _toRegister(context)
+              SizedBox(height: 20),
+              _toRegister()
             ],
           ),
-        )
+        ),
       ),
     );
   }
 
-  Widget _emailInput(LoginBloc bloc) {
+  Widget _emailInput() {
     return BlocBuilder<LoginBloc, LoginState>(
+      bloc: _bloc,
       buildWhen: (previous, current) => previous.email != current.email,
       builder: (context, state) {
         return EmailField(
-            onChange: (email) => bloc.add(EmailChanged(email)),
-            errorMessage: state.emailError,
+          onChange: (email) => _bloc.add(
+            EmailChanged(email),
+          ),
+          errorMessage: state.emailError,
         );
-    });
+      },
+    );
   }
 
-  Widget _passwordInput(LoginBloc bloc) {
+  Widget _passwordInput() {
     return BlocBuilder<LoginBloc, LoginState>(
+      bloc: _bloc,
       buildWhen: (previous, current) => previous.password != current.password,
       builder: (context, state) {
-          return PasswordField(
-              onChange: (password) => bloc.add(PasswordChanged(password)),
-              errorMessage: state.passwordError
-          );
-      }
+        return PasswordField(
+          onChange: (password) => _bloc.add(
+            PasswordChanged(password),
+          ),
+          errorMessage: state.passwordError,
+        );
+      },
     );
   }
 
   Widget _loginButton() {
     return BlocBuilder<LoginBloc, LoginState>(
+      bloc: _bloc,
+      buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
         return ButtonPrimary(
           enable: state.status,
           onPress: () {
             showToastSuccess('Submit Login');
           },
-          text: 'Login'
+          text: 'Login',
         );
-      });
+      },
+    );
   }
 
-  Widget _toRegister(BuildContext context) {
+  Widget _toRegister() {
     return Container(
+      width: double.infinity,
       child: TextButton(
         onPressed: () {
           Navigator.pushNamed(context, RegisterScreen.routeName);
         },
-        child: Text('Register', style: TextStyle(fontSize: 14.0)),
-        style: ButtonStyle(
-          overlayColor: MaterialStateProperty.all(Colors.transparent),
-          foregroundColor: MaterialStateProperty.resolveWith((states) {
-            if (states.contains(MaterialState.pressed)) {
-              return Colors.teal[700];
-            } else {
-              return Colors.black;
-            }
-          })
+        child: Text(
+          'Register',
+          style: TextStyle(fontSize: 14),
         ),
       ),
     );
   }
-
 }
