@@ -2,7 +2,7 @@
 
 A simple application login & register form validation.  
 using [bloc library](https://bloclibrary.dev/#/)  
-Download apk [here](https://e.pcloud.link/publink/show?code=XZkOCWZ8RckU7PQt3hCscmp9kJxRfu1I9bX)  
+Download apk [here](https://e.pcloud.link/publink/show?code=XZPGkCZhL4Qwo2mmi5zKvv7u2mwcuRwBePy)  
 
 #### Dependencies ####
 ```
