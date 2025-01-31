@@ -17,11 +17,15 @@ class ButtonPrimary extends StatelessWidget {
       height: 45,
       width: double.infinity,
       decoration: BoxDecoration(
-          color: enable ? Colors.teal : Colors.grey[400],
-          borderRadius: BorderRadius.circular(8)),
+        color: enable ? Colors.teal : Colors.grey[400],
+        borderRadius: BorderRadius.circular(8),
+      ),
       child: MaterialButton(
         onPressed: enable ? onPress : null,
-        child: Text(text, style: TextStyle(color: Colors.white, fontSize: 16)),
+        child: Text(
+          text,
+          style: TextStyle(color: Colors.white, fontSize: 16),
+        ),
       ),
     );
   }
