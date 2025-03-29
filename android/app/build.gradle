@@ -26,6 +26,9 @@ if (flutterVersionName == null) {
 
 android {
 
+    println("app/build.gradle # min SDK : " + flutter.minSdkVersion)
+    println("app/build.gradle # target SDK : " + flutter.targetSdkVersion)
+
     signingConfigs {
         keyConfig {
             keyAlias KEY_ALIAS
