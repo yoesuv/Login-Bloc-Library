@@ -26,6 +26,9 @@ if (flutterVersionName == null) {
 
 android {
 
+    println("app/build.gradle # min SDK : " + flutter.minSdkVersion)
+    println("app/build.gradle # target SDK : " + flutter.targetSdkVersion)
+
     signingConfigs {
         keyConfig {
             keyAlias KEY_ALIAS
@@ -37,7 +40,6 @@ android {
 
     namespace "com.yoesuv.login_bloc_library"
     compileSdkVersion flutter.compileSdkVersion
-    ndkVersion flutter.ndkVersion
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
