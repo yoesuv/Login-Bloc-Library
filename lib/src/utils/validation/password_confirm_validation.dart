@@ -1,11 +1,10 @@
 import 'package:formz/formz.dart';
 import 'package:login_bloc_library/src/core/data/constants.dart';
 
-
 class PasswordConfirm extends FormzInput<String, String> {
-
-  const PasswordConfirm.pure({this.password}): super.pure('');
-  const PasswordConfirm.dirty({required this.password, String value = ''}):super.dirty(value);
+  const PasswordConfirm.pure({this.password}) : super.pure('');
+  const PasswordConfirm.dirty({required this.password, String value = ''})
+    : super.dirty(value);
 
   final String? password;
 
@@ -24,6 +23,5 @@ class PasswordConfirm extends FormzInput<String, String> {
     } else {
       return null;
     }
-
   }
 }

@@ -4,10 +4,7 @@ class EmailField extends StatelessWidget {
   final Function(String)? onChange;
   final String? errorMessage;
 
-  EmailField({
-    required this.onChange,
-    this.errorMessage,
-  });
+  EmailField({required this.onChange, this.errorMessage});
 
   @override
   Widget build(BuildContext context) {

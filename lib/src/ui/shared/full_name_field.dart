@@ -4,10 +4,7 @@ class FullNameField extends StatelessWidget {
   final Function(String)? onChange;
   final String? errorMessage;
 
-  FullNameField({
-    required this.onChange,
-    this.errorMessage,
-  });
+  FullNameField({required this.onChange, this.errorMessage});
 
   @override
   Widget build(BuildContext context) {

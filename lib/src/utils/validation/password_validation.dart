@@ -2,9 +2,8 @@ import 'package:formz/formz.dart';
 import 'package:login_bloc_library/src/core/data/constants.dart';
 
 class Password extends FormzInput<String, String> {
-
-  const Password.pure(): super.pure('');
-  const Password.dirty([String value = '']): super.dirty(value);
+  const Password.pure() : super.pure('');
+  const Password.dirty([String value = '']) : super.dirty(value);
 
   @override
   String? validator(String value) {
@@ -16,5 +15,4 @@ class Password extends FormzInput<String, String> {
       return null;
     }
   }
-
 }

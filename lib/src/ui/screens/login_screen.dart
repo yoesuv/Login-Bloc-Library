@@ -28,9 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Login'),
-      ),
+      appBar: AppBar(title: Text('Login')),
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.all(16),
@@ -41,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: 20),
               _loginButton(),
               SizedBox(height: 20),
-              _toRegister()
+              _toRegister(),
             ],
           ),
         ),
@@ -55,9 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
       buildWhen: (previous, current) => previous.email != current.email,
       builder: (context, state) {
         return EmailField(
-          onChange: (email) => _bloc.add(
-            EmailChanged(email),
-          ),
+          onChange: (email) => _bloc.add(EmailChanged(email)),
           errorMessage: state.emailError,
         );
       },
@@ -70,9 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
       buildWhen: (previous, current) => previous.password != current.password,
       builder: (context, state) {
         return PasswordField(
-          onChange: (password) => _bloc.add(
-            PasswordChanged(password),
-          ),
+          onChange: (password) => _bloc.add(PasswordChanged(password)),
           errorMessage: state.passwordError,
         );
       },
@@ -102,10 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
         onPressed: () {
           Navigator.pushNamed(context, RegisterScreen.routeName);
         },
-        child: Text(
-          'Register',
-          style: TextStyle(fontSize: 14),
-        ),
+        child: Text('Register', style: TextStyle(fontSize: 14)),
       ),
     );
   }

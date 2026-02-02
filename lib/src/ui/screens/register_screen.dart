@@ -30,9 +30,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Register'),
-      ),
+      appBar: AppBar(title: Text('Register')),
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.all(16),
@@ -42,10 +40,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
               _emailInput(),
               _passwordInput(),
               _confirmPasswordInput(),
-              Container(
-                margin: EdgeInsets.only(top: 20),
-              ),
-              _registerButton()
+              Container(margin: EdgeInsets.only(top: 20)),
+              _registerButton(),
             ],
           ),
         ),
@@ -99,9 +95,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
           previous.passwordConfirm != current.passwordConfirm,
       builder: (context, state) {
         return PasswordField(
-          onChange: (password) => _bloc.add(
-            RegisterConfirmPasswordChanged(password),
-          ),
+          onChange: (password) =>
+              _bloc.add(RegisterConfirmPasswordChanged(password)),
           errorMessage: state.passwordConfirmError,
           isConfirmPassword: true,
         );

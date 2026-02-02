@@ -33,8 +33,9 @@ class PasswordFieldState extends State<PasswordField> {
       keyboardType: TextInputType.visiblePassword,
       obscureText: _isToggle,
       decoration: InputDecoration(
-        hintText:
-            widget.isConfirmPassword ? 'confirm password' : 'your password',
+        hintText: widget.isConfirmPassword
+            ? 'confirm password'
+            : 'your password',
         labelText: widget.isConfirmPassword ? 'Confirm Password' : 'Password',
         errorText: widget.errorMessage,
         suffixIcon: InkWell(

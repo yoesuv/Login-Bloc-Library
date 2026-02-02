@@ -15,9 +15,7 @@ class App extends StatelessWidget {
             fontSize: 20,
             fontWeight: FontWeight.w600,
           ),
-          iconTheme: IconThemeData(
-            color: Colors.white,
-          ),
+          iconTheme: IconThemeData(color: Colors.white),
         ),
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.teal,
