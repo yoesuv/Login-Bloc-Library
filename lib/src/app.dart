@@ -8,16 +8,14 @@ class App extends StatelessWidget {
       title: 'Login & Register',
       theme: ThemeData(
         appBarTheme: AppBarTheme(
-          color: Colors.teal,
+          backgroundColor: Colors.teal,
           centerTitle: false,
           titleTextStyle: TextStyle(
             color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.w600,
           ),
-          iconTheme: IconThemeData(
-            color: Colors.white,
-          ),
+          iconTheme: IconThemeData(color: Colors.white),
         ),
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.teal,

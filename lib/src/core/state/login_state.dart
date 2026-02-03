@@ -24,11 +24,12 @@ class LoginState extends Equatable {
     String? passwordError,
   }) {
     return LoginState(
-        status: status ?? this.status,
-        email: email ?? this.email,
-        emailError: emailError,
-        password: password ?? this.password,
-        passwordError: passwordError);
+      status: status ?? this.status,
+      email: email ?? this.email,
+      emailError: emailError,
+      password: password ?? this.password,
+      passwordError: passwordError,
+    );
   }
 
   @override

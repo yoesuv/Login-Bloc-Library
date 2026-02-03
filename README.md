@@ -1,15 +1,14 @@
 ## Login Register Bloc Library ##
 
-A simple application login & register form validation.  
-using [bloc library](https://bloclibrary.dev/#/)  
-Download apk [here](https://e.pcloud.link/publink/show?code=XZdCbdZc6h6IUtjbpuU2tPhKaXASzyf8zqy)  
+Login & register form validation library built with flutter_bloc + Formz,
+including ready-to-use blocs, states/events, and shared input widgets.
 
 #### Dependencies ####
 ```
-Flutter 3.29.2 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision c236373904 (2 weeks ago) • 2025-03-13 16:17:06 -0400
-Engine • revision 18b71d647a
-Tools • Dart 3.7.2 • DevTools 2.42.3
+Flutter 3.38.9 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 67323de285 (4 days ago) • 2026-01-28 13:43:12 -0800
+Engine • hash 5eb06b7ad5bb8cbc22c5230264c7a00ceac7674b (revision 587c18f873) (5 days ago) • 2026-01-27 23:23:03.000Z
+Tools • Dart 3.10.8 • DevTools 2.51.1
 ```
 
 #### Screenshot Android ####
@@ -18,9 +17,9 @@ Tools • Dart 3.7.2 • DevTools 2.42.3
 | ![](https://images2.imgbox.com/52/de/cltNsQIc_o.jpg) | ![](https://images2.imgbox.com/3b/44/BwyT7Oli_o.jpg) | ![](https://images2.imgbox.com/5c/aa/Q2T8C2Us_o.jpg) | ![](https://images2.imgbox.com/43/8d/ptzDPFlE_o.jpg) |
 
 #### Screenshot iOS ####
-| ![](https://images2.imgbox.com/91/57/SKMUz8aD_o.png) | ![](https://images2.imgbox.com/79/f9/sI6tjWXX_o.png) | ![](https://images2.imgbox.com/2e/61/3nB4PX0t_o.png) | ![](https://images2.imgbox.com/f5/0d/UXXbY6Ne_o.png) |
+| ![](https://i.imgur.com/3waH0X0.png) | ![](https://i.imgur.com/qO6T1xp.png) | ![](https://i.imgur.com/0phtRvN.png) | ![](https://i.imgur.com/MqYmGFv.png) |
 | :---: | :---: | :---: | :---: |
-| ![](https://images2.imgbox.com/62/0e/pMlloXBC_o.png) | ![](https://images2.imgbox.com/f2/6a/W8bb1eWQ_o.png) | ![](https://images2.imgbox.com/4b/91/6HnEvrSZ_o.png) | ![](https://images2.imgbox.com/88/b1/ICMF3peL_o.png) |
+| ![](https://i.imgur.com/u5SxBV7.png) | ![](https://i.imgur.com/Bj3DDKA.png) | ![](https://i.imgur.com/KJYdRdo.png) | ![](https://i.imgur.com/DoWh6qR.png) |
 
 #### List Library ####
 - [Email Validator](https://pub.dev/packages/email_validator)

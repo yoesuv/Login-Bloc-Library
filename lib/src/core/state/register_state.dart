@@ -50,10 +50,10 @@ class RegisterState extends Equatable {
 
   @override
   List<Object> get props => [
-        status,
-        fullName,
-        email,
-        password,
-        passwordConfirm,
-      ];
+    status,
+    fullName,
+    email,
+    password,
+    passwordConfirm,
+  ];
 }

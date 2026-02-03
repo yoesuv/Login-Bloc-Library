@@ -9,31 +9,27 @@ class AppRoute {
   static Route<dynamic> routes(RouteSettings settings) {
     if (settings.name == '/') {
       return MaterialPageRoute(
-          builder: (context) {
-            return BlocProvider(
-              create: (context) => LoginBloc(),
-              child: LoginScreen(),
-            );
-          }
+        builder: (context) {
+          return BlocProvider(
+            create: (context) => LoginBloc(),
+            child: LoginScreen(),
+          );
+        },
       );
     } else if (settings.name == RegisterScreen.routeName) {
       return MaterialPageRoute(
-          builder: (context) {
-            return BlocProvider(
-              create: (context) => RegisterBloc(),
-              child: RegisterScreen(),
-            );
-          }
+        builder: (context) {
+          return BlocProvider(
+            create: (context) => RegisterBloc(),
+            child: RegisterScreen(),
+          );
+        },
       );
     } else {
       return MaterialPageRoute(
         builder: (context) {
-          return Scaffold(
-            body: Center(
-              child: Text('Page Not Found'),
-            ),
-          );
-        }
+          return Scaffold(body: Center(child: Text('Page Not Found')));
+        },
       );
     }
   }

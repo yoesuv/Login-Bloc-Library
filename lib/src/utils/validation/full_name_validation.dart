@@ -1,9 +1,8 @@
 import 'package:formz/formz.dart';
 
 class FullName extends FormzInput<String, String> {
-
-  const FullName.pure(): super.pure('');
-  const FullName.dirty([String value = '']): super.dirty(value);
+  const FullName.pure() : super.pure('');
+  const FullName.dirty([String value = '']) : super.dirty(value);
 
   @override
   String? validator(String value) {
@@ -19,5 +18,4 @@ class FullName extends FormzInput<String, String> {
       return null;
     }
   }
-
 }

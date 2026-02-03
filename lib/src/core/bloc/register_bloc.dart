@@ -17,19 +17,13 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
 
   void _fullNameChanged(FullNameChanged event, Emitter<RegisterState> emit) {
     final fullName = FullName.dirty(event.fullName);
-    emit(state.copyWith(
-      fullName: fullName,
-      fullNameError: fullName.error,
-    ));
+    emit(state.copyWith(fullName: fullName, fullNameError: fullName.error));
     _validateInput(emit);
   }
 
   void _emailChanged(EmailChanged event, Emitter<RegisterState> emit) {
     final email = Email.dirty(event.email);
-    emit(state.copyWith(
-      email: email,
-      emailError: email.error,
-    ));
+    emit(state.copyWith(email: email, emailError: email.error));
     _validateInput(emit);
   }
 
@@ -42,11 +36,13 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       password: password.value,
       value: state.passwordConfirm.value,
     );
-    emit(state.copyWith(
-      password: password,
-      passwordConfirm: confirmPassword,
-      passwordError: password.error,
-    ));
+    emit(
+      state.copyWith(
+        password: password,
+        passwordConfirm: confirmPassword,
+        passwordError: password.error,
+      ),
+    );
     _validateInput(emit);
   }
 
@@ -58,10 +54,12 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       password: state.password.value,
       value: event.confirmPassword,
     );
-    emit(state.copyWith(
-      passwordConfirm: passwordConfirm,
-      passwordConfirmError: passwordConfirm.error,
-    ));
+    emit(
+      state.copyWith(
+        passwordConfirm: passwordConfirm,
+        passwordConfirmError: passwordConfirm.error,
+      ),
+    );
     _validateInput(emit);
   }
 
@@ -72,8 +70,6 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       state.password,
       state.passwordConfirm,
     ]);
-    emit(state.copyWith(
-      status: status,
-    ));
+    emit(state.copyWith(status: status));
   }
 }
