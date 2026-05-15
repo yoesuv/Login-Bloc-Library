@@ -2,10 +2,10 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:login_bloc_library/src/core/bloc/register_bloc.dart';
-import 'package:login_bloc_library/src/core/event/register_event.dart';
-import 'package:login_bloc_library/src/core/state/register_state.dart';
-import 'package:login_bloc_library/src/ui/screens/register_screen.dart';
+import 'package:login_bloc_library/src/features/register/register_bloc.dart';
+import 'package:login_bloc_library/src/features/register/register_event.dart';
+import 'package:login_bloc_library/src/features/register/register_state.dart';
+import 'package:login_bloc_library/src/features/register/register_screen.dart';
 import 'package:mocktail/mocktail.dart';
 
 class MockRegisterBloc extends MockBloc<RegisterEvent, RegisterState>

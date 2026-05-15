@@ -5,10 +5,25 @@ providing reusable blocs, events, states, and shared input widgets for Flutter a
 
 #### Dependencies ####
 ```
-Flutter 3.41.7 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision cc0734ac71 (8 days ago) • 2026-04-15 21:21:08 -0700
-Engine • hash 7a53c052bc4b472cf780b199087e1368e4a9aa8c (revision 59aa584fdf) (8 days ago) • 2026-04-16 02:32:16.000Z
+Flutter 3.41.9 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 00b0c91f06 (2 weeks ago) • 2026-04-29 10:03:19 -0700
+Engine • hash 9161402dc0e134b3fb5adee5046b6e84b1a5e1c1 (revision 42d3d75a56) (16 days ago) • 2026-04-28 17:31:55.000Z
 Tools • Dart 3.11.5 • DevTools 2.54.2
+```
+
+#### Testing ####
+
+This project includes comprehensive unit and widget tests using `flutter_test`, `bloc_test`, and `mocktail`.
+
+| Test Category | Description |
+| :--- | :--- |
+| **Bloc Tests** | Validate state transitions for `LoginBloc` and `RegisterBloc`, including email, password, full name, and confirm password validation logic. |
+| **Widget Tests** | Test reusable widgets like `PasswordField` (toggle visibility, callbacks, error display). |
+| **Screen Tests** | Verify UI interactions and navigation for `LoginScreen` and `RegisterScreen`, including event dispatching on text input and button state changes. |
+
+Run all tests with:
+```
+flutter test
 ```
 
 #### Screenshot Android ####

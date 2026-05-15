@@ -1,8 +1,8 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:login_bloc_library/src/core/bloc/register_bloc.dart';
-import 'package:login_bloc_library/src/core/event/register_event.dart';
-import 'package:login_bloc_library/src/core/state/register_state.dart';
+import 'package:login_bloc_library/src/features/register/register_bloc.dart';
+import 'package:login_bloc_library/src/features/register/register_event.dart';
+import 'package:login_bloc_library/src/features/register/register_state.dart';
 import 'package:login_bloc_library/src/utils/validation/email_validation.dart';
 import 'package:login_bloc_library/src/utils/validation/full_name_validation.dart';
 import 'package:login_bloc_library/src/utils/validation/password_confirm_validation.dart';

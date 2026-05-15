@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:login_bloc_library/src/ui/shared/password_field.dart';
+import 'package:login_bloc_library/src/core/widgets/password_field.dart';
 
 void main() {
   group('PasswordField', () {

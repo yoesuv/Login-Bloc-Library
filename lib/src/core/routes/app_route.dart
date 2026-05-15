@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:login_bloc_library/src/core/bloc/login_bloc.dart';
-import 'package:login_bloc_library/src/core/bloc/register_bloc.dart';
-import 'package:login_bloc_library/src/ui/screens/login_screen.dart';
-import 'package:login_bloc_library/src/ui/screens/register_screen.dart';
+import 'package:login_bloc_library/src/features/login/login_bloc.dart';
+import 'package:login_bloc_library/src/features/register/register_bloc.dart';
+import 'package:login_bloc_library/src/features/login/login_screen.dart';
+import 'package:login_bloc_library/src/features/register/register_screen.dart';
 
 class AppRoute {
   static Route<dynamic> routes(RouteSettings settings) {
