@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:login_bloc_library/src/core/bloc/register_bloc.dart';
-import 'package:login_bloc_library/src/core/event/register_event.dart';
-import 'package:login_bloc_library/src/core/state/register_state.dart';
-import 'package:login_bloc_library/src/ui/shared/button_primary.dart';
-import 'package:login_bloc_library/src/ui/shared/email_field.dart';
-import 'package:login_bloc_library/src/ui/shared/full_name_field.dart';
-import 'package:login_bloc_library/src/ui/shared/password_field.dart';
+import 'package:login_bloc_library/src/features/register/register_bloc.dart';
+import 'package:login_bloc_library/src/features/register/register_event.dart';
+import 'package:login_bloc_library/src/features/register/register_state.dart';
+import 'package:login_bloc_library/src/core/widgets/button_primary.dart';
+import 'package:login_bloc_library/src/core/widgets/email_field.dart';
+import 'package:login_bloc_library/src/core/widgets/full_name_field.dart';
+import 'package:login_bloc_library/src/core/widgets/password_field.dart';
 import 'package:login_bloc_library/src/utils/app_helper.dart';
 
 class RegisterScreen extends StatefulWidget {

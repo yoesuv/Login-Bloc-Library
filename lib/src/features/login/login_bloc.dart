@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:formz/formz.dart';
-import 'package:login_bloc_library/src/core/event/login_event.dart';
-import 'package:login_bloc_library/src/core/state/login_state.dart';
+import 'package:login_bloc_library/src/features/login/login_event.dart';
+import 'package:login_bloc_library/src/features/login/login_state.dart';
 import 'package:login_bloc_library/src/utils/validation/email_validation.dart';
 import 'package:login_bloc_library/src/utils/validation/password_validation.dart';
 
